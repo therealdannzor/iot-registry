@@ -1,0 +1,39 @@
+#%RAML 1.0
+title: IoT Registry
+baseUri: http://127.0.0.1:8080
+
+types:
+  Request:
+    type: object
+    properties:
+      required: true
+      type: string
+      minLength: 16
+      maxLength: 16
+
+/onboard:
+  description: register an IoT device
+  post:
+    body:
+      application/json:
+        example: |
+          {
+               "deveui": "FFA45722AA738240"
+          }
+      type: Request
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {
+                "The device has been successfully registered"
+              }
+      422:
+        body:
+          application/json:
+            example: |
+              {
+                "The devEUI has already been used"
+              }
+

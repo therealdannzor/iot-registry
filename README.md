@@ -12,7 +12,7 @@ Each sensor has a unique 16-character hexadecimal identifier called DevEUI. Each
 - Each sensor is registered by entering the short-form code (instead of the full code)
 
 ### Backend
-- Add API `/sensor-onboarding-example` to register DevEUIs
+- Add API `/onboard` to register DevEUIs
 - Add responses to confirm success or failure of API consumption
 - Add queue mechanism to API to handle a maximum of 10 in-flight API requests concurrently
 - Generate 100 unique DevEUIs
