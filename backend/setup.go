@@ -36,6 +36,7 @@ func newBatch() ([NUMBER_OF_DEVICES]string, error) {
 			return res, err
 		}
 
+		// make sure we add unique short code IDs
 		if tmp[short] == "" {
 			tmp[short] = ID
 			i++
@@ -70,16 +71,4 @@ func shortFmt(hexstr string) (string, error) {
 	}
 
 	return hexstr[len(hexstr)-5:], nil
-}
-
-func checkUniqueIDs(list [NUMBER_OF_DEVICES]string) bool {
-	m := make(map[string]string)
-	for i := 0; i < NUMBER_OF_DEVICES; i++ {
-		short, _ := shortFmt(list[i])
-		if m[short] != "" {
-			return false
-		}
-		m[short] = list[i]
-	}
-	return true
 }
