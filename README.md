@@ -30,4 +30,5 @@ Each sensor has a unique 16-character hexadecimal identifier called DevEUI. Each
 - [x] Add queue mechanism to API to handle a maximum of 10 in-flight API requests concurrently
 - [x] Generate 100 unique DevEUIs
 - [x] Add app termination response with DevUIs successfully registered (including in-flight ones)
-- [ ] Create function to handle all in-flight requests before exiting the process
+- [x] Handle all in-flight requests before exiting the process
+- [ ] Return a HTTP response of registered devices when registration is aborted before completion
