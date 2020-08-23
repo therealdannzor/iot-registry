@@ -32,12 +32,6 @@ type SensorBackend struct {
 	// It is assumed that entries of this mapping has been registered by the API
 	registry map[string]string
 
-	// scheduled is a queue which contains the up to 10 unique DevEUIs that are considered in-flight to register
-	scheduled [MAX_SERVED_REQUESTS]string
-
-	// scLen keeps track of the amount of scheduled items and functions like a tail index for the queue
-	scLen int
-
 	// prevent race conditions
 	mu *sync.Mutex
 }
