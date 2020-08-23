@@ -5,6 +5,7 @@ import (
 	"encoding/hex"
 	"errors"
 	"fmt"
+	"sync"
 )
 
 // New creates a backend for the sensor registry service
@@ -17,6 +18,7 @@ func New() (SensorBackend, error) {
 	}
 
 	b.SensorList = list
+	b.mu = new(sync.Mutex)
 
 	return b, nil
 }
