@@ -11,7 +11,7 @@ import (
 )
 
 // Expose exposes the APIs to the backend `back` at ip:port `address`
-func Expose(back be.APIcall, address string) {
+func Expose(back be.SensorBackend, address string) {
 	// add cors restrictions
 	c := cors.New(cors.Options{
 		AllowedOrigins: []string{"*"},
