@@ -5,7 +5,7 @@ A fictitious CLI and API to generate and register unique IoT devices
 Build the project with
 
 ```bash
-$ make build
+$ make 
 ```
 
 and run it with
@@ -13,6 +13,14 @@ and run it with
 ```bash
 $ ./start
 ```
+
+By starting the project, the system generated 100 DevEUIs, saved in the backend. Now open a new terminal window to begin to register all of them. Send an API request like so
+
+```bash
+$ curl -X POST 127.0.0.1:8080/onboard
+```
+
+You should now see the devices being registered in "real-time". There is a delay to simulate some processing in the backend. At the end of the full registration, a response containing all the DevEUIs can be seen.
 
 ### Background
 
